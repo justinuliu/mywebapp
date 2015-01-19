@@ -7,6 +7,13 @@
   <version>1.0-SNAPSHOT</version>
   <name>mywebapp Maven Webapp</name>
   <url>http://maven.apache.org</url>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.1.10.RELEASE</version>
+  </parent>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -24,11 +31,21 @@
       <artifactId>spring-webmvc</artifactId>
       <version>4.1.4.RELEASE</version>
     </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
   </dependencies>
-
+  <properties>
+    <start-class>hello.Application</start-class>
+  </properties>
   <build>
     <finalName>mywebapp</finalName>
     <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
       <plugin>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-maven-plugin</artifactId>
